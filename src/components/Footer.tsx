@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = '971544312820'; // Remove spaces and + for WhatsApp URL
+    const phoneNumber = '6281803326000'; // Remove spaces and + for WhatsApp URL
     const message = encodeURIComponent('Hello! I\'m interested in booking the Saridewi Penthouse. Could you please provide more information?');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                   onClick={openWhatsApp}
                   className="text-linen hover:text-warm-white transition-colors duration-200 text-sm text-left"
                 >
-                  WhatsApp: +971 54 431 2820
+                  WhatsApp: +62 81803326000
                 </button>
               </div>
               <div className="flex items-center space-x-3">

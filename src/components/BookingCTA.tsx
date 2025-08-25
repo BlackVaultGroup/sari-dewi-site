@@ -35,7 +35,7 @@ const BookingCTA: React.FC = () => {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = '971544312820'; // Remove spaces and + for WhatsApp URL
+    const phoneNumber = '6281803326000'; // Remove spaces and + for WhatsApp URL
     const message = encodeURIComponent('Hello! I\'m interested in booking the Saridewi Penthouse. Could you please provide more information?');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
