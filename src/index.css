@@ -1,0 +1,328 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ldg-psb-background: #EFEDE6;
+    --ldg-psb-border-radius: 0.75rem;
+    --ldg-psb-box-shadow: 0px 10px 25px 0px rgba(90, 73, 58, 0.15);
+    --ldg-psb-padding: 24px;
+    --ldg-psb-input-background: #ffffff;
+    --ldg-psb-button-border-radius: 0.5rem;
+    --ldg-psb-color-primary: #5a493a;
+    --ldg-psb-color-primary-lighter: #7A5C43;
+    --ldg-psb-color-primary-darker: #2d251d;
+    --ldg-psb-color-primary-contrast: #efede6;
+    --ldg-semantic-color-primary: #5a493a;
+    --ldg-semantic-color-primary-lighter: #7A5C43;
+    --ldg-semantic-color-primary-darker: #2d251d;
+    --ldg-semantic-color-primary-contrast: #efede6;
+    --ldg-component-modal-z-index: 999;
+  }
+  
+  #lodgify-search-bar {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .parallax {
+    will-change: transform;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    
+    .parallax {
+      transform: none !important;
+    }
+  }
+}
+
+/* OwnerRez Widget Styling */
+.ownerrez-widget {
+  width: 100% !important;
+  min-height: 600px;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Style OwnerRez widget container */
+.ownerrez-widget iframe {
+  width: 100% !important;
+  min-height: 600px !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+
+/* OwnerRez widget responsive adjustments */
+@media (max-width: 768px) {
+  .ownerrez-widget {
+    min-height: 500px;
+  }
+  
+  .ownerrez-widget iframe {
+    min-height: 500px !important;
+  }
+}
+
+/* Custom Lodgify Widget Styling (keeping for backward compatibility) */
+#lodgify-search-bar {
+  --ldg-font-family: 'Montserrat', sans-serif !important;
+}
+
+#lodgify-search-bar * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Style the main container */
+#lodgify-search-bar > div {
+  background: #EFEDE6 !important;
+  border-radius: 12px !important;
+  padding: 32px !important;
+  box-shadow: 0px 10px 25px 0px rgba(90, 73, 58, 0.15) !important;
+  border: 1px solid #E6DED2 !important;
+}
+
+/* Style input fields */
+#lodgify-search-bar input,
+#lodgify-search-bar select,
+#lodgify-search-bar button:not([class*="search"]):not([class*="Search"]) {
+  background: #ffffff !important;
+  border: 2px solid #E6DED2 !important;
+  border-radius: 8px !important;
+  padding: 16px 20px !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #5a493a !important;
+  transition: all 0.3s ease !important;
+  font-family: 'Montserrat', sans-serif !important;
+  min-height: 56px !important;
+}
+
+#lodgify-search-bar input:focus,
+#lodgify-search-bar select:focus,
+#lodgify-search-bar button:not([class*="search"]):not([class*="Search"]):focus {
+  outline: none !important;
+  border-color: #5a493a !important;
+  box-shadow: 0 0 0 3px rgba(90, 73, 58, 0.1) !important;
+}
+
+#lodgify-search-bar input:hover,
+#lodgify-search-bar select:hover,
+#lodgify-search-bar button:not([class*="search"]):not([class*="Search"]):hover {
+  border-color: #7A5C43 !important;
+}
+
+/* Style placeholder text */
+#lodgify-search-bar input::placeholder {
+  color: #7A5C43 !important;
+  opacity: 0.7 !important;
+  font-weight: 400 !important;
+}
+
+/* Style labels */
+#lodgify-search-bar label {
+  color: #5a493a !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  margin-bottom: 8px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Style the search button */
+#lodgify-search-bar button[class*="search"],
+#lodgify-search-bar button[class*="Search"],
+#lodgify-search-bar [role="button"][class*="search"],
+#lodgify-search-bar [role="button"][class*="Search"] {
+  background: #5a493a !important;
+  color: #EFEDE6 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 16px 32px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  font-family: 'Montserrat', sans-serif !important;
+  min-height: 56px !important;
+  width: 100% !important;
+  margin-top: 16px !important;
+}
+
+#lodgify-search-bar button[class*="search"]:hover,
+#lodgify-search-bar button[class*="Search"]:hover,
+#lodgify-search-bar [role="button"][class*="search"]:hover,
+#lodgify-search-bar [role="button"][class*="Search"]:hover {
+  background: #7A5C43 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(90, 73, 58, 0.3) !important;
+}
+
+#lodgify-search-bar button[class*="search"]:active,
+#lodgify-search-bar button[class*="Search"]:active,
+#lodgify-search-bar [role="button"][class*="search"]:active,
+#lodgify-search-bar [role="button"][class*="Search"]:active {
+  transform: translateY(0) !important;
+}
+
+/* Style dropdown arrows and icons */
+#lodgify-search-bar select {
+  appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235a493a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 16px center !important;
+  background-size: 16px !important;
+  padding-right: 48px !important;
+}
+
+/* Style any dropdown menus */
+#lodgify-search-bar [role="listbox"],
+#lodgify-search-bar [role="menu"],
+#lodgify-search-bar .dropdown-menu {
+  background: #ffffff !important;
+  border: 2px solid #E6DED2 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px rgba(90, 73, 58, 0.15) !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#lodgify-search-bar [role="option"],
+#lodgify-search-bar .dropdown-item {
+  color: #5a493a !important;
+  padding: 12px 20px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  transition: background-color 0.2s ease !important;
+}
+
+#lodgify-search-bar [role="option"]:hover,
+#lodgify-search-bar .dropdown-item:hover {
+  background: #F5EBDD !important;
+  color: #5a493a !important;
+}
+
+/* Style any error messages */
+#lodgify-search-bar .error,
+#lodgify-search-bar [class*="error"] {
+  color: #d32f2f !important;
+  font-size: 14px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  margin-top: 4px !important;
+}
+
+/* Style loading states */
+#lodgify-search-bar .loading,
+#lodgify-search-bar [class*="loading"] {
+  opacity: 0.7 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #lodgify-search-bar > div {
+    padding: 24px 20px !important;
+  }
+  
+  #lodgify-search-bar input,
+  #lodgify-search-bar select,
+  #lodgify-search-bar button {
+    font-size: 16px !important;
+    min-height: 52px !important;
+  }
+}
+
+/* Additional styling for better integration */
+#lodgify-search-bar .form-group,
+#lodgify-search-bar .input-group {
+  margin-bottom: 20px !important;
+}
+
+#lodgify-search-bar .form-group:last-child,
+#lodgify-search-bar .input-group:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Style any calendar/date picker elements */
+#lodgify-search-bar .calendar,
+#lodgify-search-bar [class*="calendar"],
+#lodgify-search-bar .datepicker,
+#lodgify-search-bar [class*="datepicker"] {
+  background: #ffffff !important;
+  border: 2px solid #E6DED2 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px rgba(90, 73, 58, 0.15) !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#lodgify-search-bar .calendar-day,
+#lodgify-search-bar [class*="day"] {
+  color: #5a493a !important;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#lodgify-search-bar .calendar-day:hover,
+#lodgify-search-bar [class*="day"]:hover {
+  background: #F5EBDD !important;
+}
+
+#lodgify-search-bar .calendar-day.selected,
+#lodgify-search-bar [class*="day"].selected {
+  background: #5a493a !important;
+  color: #EFEDE6 !important;
+}
+
+.hero-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.image-lazy {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sticky-cta {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.amenity-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.amenity-icon:hover {
+  transform: translateY(-4px);
+  color: #7A5C43;
+}
